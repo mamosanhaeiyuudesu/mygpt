@@ -1,7 +1,7 @@
 <template>
   <div class="flex h-screen bg-gray-900 text-white">
     <!-- アプリナビゲーション -->
-    <AppNavigation />
+    <!-- <AppNavigation /> -->
 
     <!-- モバイル用オーバーレイ -->
     <div

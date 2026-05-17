@@ -1,9 +1,9 @@
 <template>
   <div class="flex h-screen bg-gray-900 text-white">
     <!-- アプリナビゲーション -->
-    <AppNavigation
+    <!-- <AppNavigation
       @account-created="handleAccountCreated(fetchChats)"
-    />
+    /> -->
 
     <!-- モバイル用オーバーレイ -->
     <div

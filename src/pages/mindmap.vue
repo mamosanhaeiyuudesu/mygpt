@@ -1,6 +1,6 @@
 <template>
   <div class="flex h-screen bg-gray-900 text-white">
-    <AppNavigation />
+    <!-- <AppNavigation /> -->
     <div class="flex-1 flex items-center justify-center pb-12 md:pb-0">
       <div class="text-center">
         <svg class="w-16 h-16 mx-auto mb-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
