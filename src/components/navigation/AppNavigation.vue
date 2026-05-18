@@ -1,6 +1,6 @@
 <template>
   <!-- PC: 縦アイコンナビ -->
-  <nav class="hidden md:flex flex-col items-center w-16 flex-shrink-0 bg-gray-950 border-r border-gray-800 py-4 gap-1">
+  <!-- <nav class="hidden md:flex flex-col items-center w-16 flex-shrink-0 bg-gray-950 border-r border-gray-800 py-4 gap-1">
     <NuxtLink
       v-for="item in navItems"
       :key="item.to"
@@ -11,10 +11,10 @@
       <div class="w-5 h-5" v-html="item.icon" />
       <span class="text-[10px] mt-0.5 leading-tight">{{ item.label }}</span>
     </NuxtLink>
-  </nav>
+  </nav> -->
 
   <!-- モバイル: ボトムナビ（入力フォーカス時は非表示） -->
-  <nav v-show="!isInputFocused" class="fixed bottom-0 left-0 right-0 h-12 bg-gray-950 border-t border-gray-800 flex md:hidden z-50">
+  <!-- <nav v-show="!isInputFocused" class="fixed bottom-0 left-0 right-0 h-12 bg-gray-950 border-t border-gray-800 flex md:hidden z-50">
     <NuxtLink
       v-for="item in navItems"
       :key="item.to"
@@ -25,7 +25,7 @@
       <div class="w-5 h-5" v-html="item.icon" />
       <span class="text-[9px] mt-0">{{ item.label }}</span>
     </NuxtLink>
-  </nav>
+  </nav> -->
 
   <!-- アカウント設定ダイアログ -->
   <AccountSetupDialog
