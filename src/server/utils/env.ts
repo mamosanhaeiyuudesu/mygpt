@@ -9,6 +9,7 @@ interface CloudflareEnv {
   NUXT_ANTHROPIC_API_KEY?: string;
   NUXT_APP_PASSWORD?: string;
   NUXT_MAX_MESSAGES?: string;
+  NUXT_EXCLUDE_MODELS?: string;
   ENCRYPTION_SALT?: string;
   MYGPT_DB?: D1Database;
 }
@@ -75,6 +76,15 @@ export function getAppPassword(event: H3Event): string {
 
   const config = useRuntimeConfig();
   return config.appPassword || '';
+}
+
+/**
+ * 除外するモデルIDのリストを取得（カンマ区切り）
+ */
+export function getExcludeModels(event: H3Event): string[] {
+  const cfEnv = (event.context.cloudflare?.env as CloudflareEnv) || {};
+  const raw = cfEnv.NUXT_EXCLUDE_MODELS || useRuntimeConfig().excludeModels as string || '';
+  return raw ? raw.split(',').map(s => s.trim()).filter(Boolean) : [];
 }
 
 /**

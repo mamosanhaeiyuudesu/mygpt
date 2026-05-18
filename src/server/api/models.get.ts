@@ -1,6 +1,7 @@
 /**
  * GET /api/models - 利用可能なモデル一覧を取得（静的リスト）
  */
+import { getExcludeModels } from '../utils/env';
 
 interface Model {
   id: string;
@@ -79,6 +80,10 @@ const AVAILABLE_MODELS: Model[] = [
   // }
 ];
 
-export default defineEventHandler(() => {
-  return { models: AVAILABLE_MODELS };
+export default defineEventHandler((event) => {
+  const excludeModels = getExcludeModels(event);
+  const models = excludeModels.length
+    ? AVAILABLE_MODELS.filter(m => !excludeModels.includes(m.id))
+    : AVAILABLE_MODELS;
+  return { models };
 });

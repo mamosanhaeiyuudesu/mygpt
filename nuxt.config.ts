@@ -35,6 +35,8 @@ export default defineNuxtConfig({
     defaultModel: 'gpt-4o-mini',
     // サーバー側のみ（NUXT_APP_PASSWORD 環境変数で設定）
     appPassword: '',
+    // 除外するモデルID（カンマ区切り、NUXT_EXCLUDE_MODELS 環境変数で設定）
+    excludeModels: '',
     // 履歴保持上限メッセージ数（NUXT_MAX_MESSAGES 環境変数で設定）
     maxMessages: 40,
     // クライアント側でも使用可能
