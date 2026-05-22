@@ -481,9 +481,12 @@ const generateImage = async (form: { name: string; systemPrompt: string; imageUr
       },
     });
     form.imageUrl = res.imageUrl;
-  } catch (e) {
+  } catch (e: unknown) {
     console.error('Failed to generate image:', e);
-    alert(t('personaManager.aiImage.error'));
+    const msg = (e as { data?: { statusMessage?: string }; statusMessage?: string })?.data?.statusMessage
+      || (e as { statusMessage?: string })?.statusMessage
+      || t('personaManager.aiImage.error');
+    alert(msg);
   } finally {
     generatingImage.value = false;
   }

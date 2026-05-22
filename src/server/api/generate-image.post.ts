@@ -35,11 +35,16 @@ export default defineEventHandler(async (event) => {
   });
 
   if (!response.ok) {
-    const error = await response.text();
-    console.error('[OpenAI] Generate image error:', error);
+    const errorText = await response.text();
+    console.error('[OpenAI] Generate image error:', errorText);
+    let errorMessage = '画像生成に失敗しました';
+    try {
+      const errorJson = JSON.parse(errorText);
+      errorMessage = errorJson?.error?.message || errorMessage;
+    } catch {}
     throw createError({
-      statusCode: 500,
-      statusMessage: '画像生成に失敗しました',
+      statusCode: response.status,
+      statusMessage: errorMessage,
     });
   }
 
