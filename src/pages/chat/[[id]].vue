@@ -124,6 +124,12 @@
     <PersonaManagerDialog
       v-model="showPersonaManager"
     />
+
+    <!-- アカウントセットアップダイアログ -->
+    <AccountSetupDialog
+      v-model="showAccountSetup"
+      @created="handleAccountCreated(fetchChats)"
+    />
   </div>
 </template>
 

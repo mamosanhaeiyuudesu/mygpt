@@ -32,7 +32,7 @@ export default defineNuxtConfig({
     // サーバー側のみ（NUXT_ANTHROPIC_API_KEY 環境変数で設定）
     anthropicApiKey: '',
     // サーバー側のみ（NUXT_DEFAULT_MODEL 環境変数で設定）
-    defaultModel: 'gpt-4o-mini',
+    defaultModel: 'gpt-4o',
     // サーバー側のみ（NUXT_APP_PASSWORD 環境変数で設定）
     appPassword: '',
     // 除外するモデルID（カンマ区切り、NUXT_EXCLUDE_MODELS 環境変数で設定）
@@ -41,7 +41,7 @@ export default defineNuxtConfig({
     maxMessages: 40,
     // クライアント側でも使用可能
     public: {
-      defaultModel: 'gpt-4o-mini'
+      defaultModel: 'gpt-4o'
     }
   },
 
